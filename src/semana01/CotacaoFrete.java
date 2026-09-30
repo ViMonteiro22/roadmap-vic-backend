@@ -12,7 +12,9 @@ public class CotacaoFrete {
         System.out.println("Digite o peso da mercadoria: ");
         double peso = input.nextDouble();
 
-        System.out.println("A distância foi de " + distancia + " e o peso foi de " + peso);
+        double taxaFixa = 15;
+        double resultado = taxaFixa + (distancia * 1.20) + (peso * 0.50);
+        System.out.println("Valor do frete: " + resultado);
 
        /* int distanciaKm = 100;
         double pesoKg = 10;
