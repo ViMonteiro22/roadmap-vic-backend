@@ -12,16 +12,17 @@ public class CotacaoFrete {
         System.out.println("Digite o peso da mercadoria: ");
         double peso = input.nextDouble();
 
+        System.out.println("A entrega é urgente? true/false");
+        boolean urgente = input.nextBoolean();
+
+        if (urgente == true){
+            System.out.println("Mercadoria será urgente!");
+        } else {
+            System.out.println("Mercadoria não urgente");
+        }
+
         double taxaFixa = 15;
         double resultado = taxaFixa + (distancia * 1.20) + (peso * 0.50);
         System.out.println("Valor do frete: " + resultado);
-
-       /* int distanciaKm = 100;
-        double pesoKg = 10;
-        double valorFrete = 15; */
-
-       // double resultado = valorFrete + (distanciaKm * 1.20) + (pesoKg * 0.50);
-
-       // System.out.println("Valor do frete: " + resultado);
     }
 }
