@@ -15,7 +15,7 @@ public class CotacaoFrete {
         System.out.println("A entrega é urgente? true/false");
         boolean urgente = input.nextBoolean();
 
-        if (urgente == true){
+        if (urgente){
             System.out.println("Mercadoria será urgente!");
         } else {
             System.out.println("Mercadoria não urgente");
@@ -23,6 +23,10 @@ public class CotacaoFrete {
 
         double taxaFixa = 15;
         double resultado = taxaFixa + (distancia * 1.20) + (peso * 0.50);
+        if (urgente){
+           double acrescimo = resultado * 0.20;
+           resultado = resultado + acrescimo;
+        }
         System.out.println("Valor do frete: " + resultado);
     }
 }
