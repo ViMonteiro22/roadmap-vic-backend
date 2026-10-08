@@ -17,8 +17,22 @@ public class CotacaoFrete {
                 continue;
             }
 
-            System.out.println("A entrega é urgente? true/false");
-            boolean urgente = input.nextBoolean();
+            boolean urgente;
+
+            while (true) {
+                System.out.println("A entrega é urgente? SIM/NÃO");
+                String resposta = input.next();
+
+                if (!resposta.equalsIgnoreCase("SIM")
+                        && !resposta.equalsIgnoreCase("NAO")
+                        && !resposta.equalsIgnoreCase("NÃO")) {
+                    System.out.println("Erro: Digite SIM ou NÃO.");
+                    continue;
+                }
+
+                urgente = resposta.equalsIgnoreCase("SIM");
+                break;
+            }
 
             if (urgente) {
                 System.out.println("Mercadoria será urgente, terá adicional de 20%!");
